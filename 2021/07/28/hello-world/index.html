@@ -87,7 +87,7 @@
 <meta property="og:description" content="1、写一个插入排序的函数，即输入一个数组，完成排序；1234567891011&#x2F;&#x2F;插入排序  void insertSort(int* p, int num) &amp;#123;      for (int i &#x3D; 0; i &lt; num - 1; i++) &amp;#123;          int tmp &#x3D; p[i + 1]; &#x2F;&#x2F;存储待插入值的内容，从第二位开始  		int j;  		for">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-07-27T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-07-29T05:38:53.854Z">
+<meta property="article:modified_time" content="2021-07-29T06:42:02.984Z">
 <meta property="article:author" content="orall">
 <meta name="twitter:card" content="summary">
 
@@ -302,8 +302,8 @@
         <h3 id="1、写一个插入排序的函数，即输入一个数组，完成排序；"><a href="#1、写一个插入排序的函数，即输入一个数组，完成排序；" class="headerlink" title="1、写一个插入排序的函数，即输入一个数组，完成排序；"></a>1、写一个插入排序的函数，即输入一个数组，完成排序；</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//插入排序  </span><br><span class="line">void insertSort(int* p, int num) &#123;  </span><br><span class="line">    for (int i = 0; i &lt; num - 1; i++) &#123;  </span><br><span class="line">        int tmp = p[i + 1]; //存储待插入值的内容，从第二位开始  </span><br><span class="line">		int j;  </span><br><span class="line">		for (j = i + 1; j &gt; 0 &amp;&amp; tmp &lt; p[j - 1]; j--) &#123;  </span><br><span class="line">				p[j] = p[j - 1]; //腾位置  </span><br><span class="line">		&#125;  </span><br><span class="line">        p[j] = tmp;  </span><br><span class="line">	&#125;  </span><br><span class="line">&#125;  </span><br></pre></td></tr></table></figure>
 <h3 id="2、完成一个函数，输入值为整数，输出该值的二进制。"><a href="#2、完成一个函数，输入值为整数，输出该值的二进制。" class="headerlink" title="2、完成一个函数，输入值为整数，输出该值的二进制。"></a>2、完成一个函数，输入值为整数，输出该值的二进制。</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//十进制转二进制  </span><br><span class="line">int DecToBinary(int d) &#123;  </span><br><span class="line">    int b = 0;  </span><br><span class="line"> 	int ten = 1;  </span><br><span class="line"> 	while (d) &#123;  </span><br><span class="line">        b += (d &amp; 1) * ten;  </span><br><span class="line"> 		ten *= 10;  </span><br><span class="line"> 		d &gt;&gt;= 1;  </span><br><span class="line"> 	&#125;  </span><br><span class="line">    return b;  </span><br><span class="line">&#125;  </span><br></pre></td></tr></table></figure>
 <h3 id="3、完成一个判断整数是否素数的函数，即，输入一个整数，判断其是否素数。"><a href="#3、完成一个判断整数是否素数的函数，即，输入一个整数，判断其是否素数。" class="headerlink" title="3、完成一个判断整数是否素数的函数，即，输入一个整数，判断其是否素数。"></a>3、完成一个判断整数是否素数的函数，即，输入一个整数，判断其是否素数。</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//判断素数  </span><br><span class="line">int isPrime(int x)  </span><br><span class="line">&#123;  </span><br><span class="line">    if (x &lt; 2) return 0;  </span><br><span class="line"> 	for (int i = 2; i &lt;= x / i; i ++ )&#123;  </span><br><span class="line">        if (x % i == 0)&#123;  </span><br><span class="line">            return 0;  </span><br><span class="line">		&#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">    return 1;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="4、编辑一个数学公式：a的立方-b的立方-c的立方"><a href="#4、编辑一个数学公式：a的立方-b的立方-c的立方" class="headerlink" title="4、编辑一个数学公式：a的立方 + b的立方 = c的立方"></a>4、编辑一个数学公式：a的立方 + b的立方 = c的立方</h3><script type="math/tex; mode=display">
-a^3 + b^3 = c^3</script>
+<h3 id="4、编辑一个数学公式：a的立方-b的立方-c的立方"><a href="#4、编辑一个数学公式：a的立方-b的立方-c的立方" class="headerlink" title="4、编辑一个数学公式：a的立方 + b的立方 = c的立方"></a>4、编辑一个数学公式：a的立方 + b的立方 = c的立方</h3><p>$a^3 + b^3 = c^3$</p>
+
       
     </div>
     
@@ -633,6 +633,28 @@ a^3 + b^3 = c^3</script>
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.staticfile.org/MathJax/MathJax-2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 
