@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/mypage/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/mypage/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/mypage/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/mypage/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/mypage/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/mypage/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/mypage/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="作业31.实现求乘法逆元的函数，给定a和m，求a模m的乘法逆元，无解时请给出无解提示，并且只返回正整数。进而给出求解同余方程（ax &#x3D; b mod m）的函数，即给定a，b，m，输出满足方程的x，无解给出无解提示。123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051">
+<meta property="og:type" content="article">
+<meta property="og:title" content="homework3">
+<meta property="og:url" content="https://oraeorae.github.io/mypage/2021/10/09/homework3/index.html">
+<meta property="og:site_name" content="面向计算机数学作业1">
+<meta property="og:description" content="作业31.实现求乘法逆元的函数，给定a和m，求a模m的乘法逆元，无解时请给出无解提示，并且只返回正整数。进而给出求解同余方程（ax &#x3D; b mod m）的函数，即给定a，b，m，输出满足方程的x，无解给出无解提示。123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-10-09T11:52:19.000Z">
+<meta property="article:modified_time" content="2021-10-09T11:53:13.824Z">
+<meta property="article:author" content="orall">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://oraeorae.github.io/mypage/2021/10/09/homework3/"/>
+
+
+
+
+
+  <title>homework3 | 面向计算机数学作业1</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/mypage/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">面向计算机数学作业1</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/mypage/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/mypage/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://oraeorae.github.io/mypage/mypage/2021/10/09/homework3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/mypage/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="面向计算机数学作业1">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">homework3</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-10-09T19:52:19+08:00">
+                2021-10-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="作业3"><a href="#作业3" class="headerlink" title="作业3"></a>作业3</h1><h2 id="1-实现求乘法逆元的函数，给定a和m，求a模m的乘法逆元，无解时请给出无解提示，并且只返回正整数。进而给出求解同余方程（ax-b-mod-m）的函数，即给定a，b，m，输出满足方程的x，无解给出无解提示。"><a href="#1-实现求乘法逆元的函数，给定a和m，求a模m的乘法逆元，无解时请给出无解提示，并且只返回正整数。进而给出求解同余方程（ax-b-mod-m）的函数，即给定a，b，m，输出满足方程的x，无解给出无解提示。" class="headerlink" title="1.实现求乘法逆元的函数，给定a和m，求a模m的乘法逆元，无解时请给出无解提示，并且只返回正整数。进而给出求解同余方程（ax = b mod m）的函数，即给定a，b，m，输出满足方程的x，无解给出无解提示。"></a>1.实现求乘法逆元的函数，给定a和m，求a模m的乘法逆元，无解时请给出无解提示，并且只返回正整数。进而给出求解同余方程（ax = b mod m）的函数，即给定a，b，m，输出满足方程的x，无解给出无解提示。</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;unordered_map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> tmp[<span class="number">3</span>] = &#123; <span class="number">0</span> &#125;;				</span><br><span class="line"><span class="function"><span class="keyword">int</span>* <span class="title">egcd</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;				<span class="comment">//注意不能返回临时变量的指针</span></span><br><span class="line">	<span class="keyword">int</span> r0 = <span class="number">1</span>, r1 = <span class="number">0</span>, s0 = <span class="number">0</span>, s1 = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span> (b) &#123;</span><br><span class="line">		<span class="keyword">int</span> q = a / b;</span><br><span class="line">		<span class="keyword">int</span> tmp1 = b;</span><br><span class="line">		b = a % b;</span><br><span class="line">		a = tmp1;</span><br><span class="line"> </span><br><span class="line">		<span class="keyword">int</span> tmp2 = r0 - q * r1;</span><br><span class="line">		r0 = r1;</span><br><span class="line">		r1 = tmp2;</span><br><span class="line"> </span><br><span class="line">		<span class="keyword">int</span> tmp3 = s0 - q * s1;</span><br><span class="line">		s0 = s1;</span><br><span class="line">		s1 = tmp3;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	tmp[<span class="number">0</span>] = r0;</span><br><span class="line">	tmp[<span class="number">1</span>] = s0;</span><br><span class="line">	tmp[<span class="number">2</span>] = a;</span><br><span class="line">	<span class="keyword">return</span> tmp;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">inverseMultiplication</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> m )</span> </span>&#123;		<span class="comment">//求乘法逆元</span></span><br><span class="line">	<span class="keyword">int</span>* val = <span class="built_in">egcd</span>(a, m);</span><br><span class="line">	<span class="keyword">if</span> (val[<span class="number">0</span>] &gt; <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> val[<span class="number">0</span>];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;				<span class="comment">//无解返回-1</span></span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a, m;</span><br><span class="line">	cin &gt;&gt; a &gt;&gt; m;</span><br><span class="line"> </span><br><span class="line">	<span class="keyword">int</span> isval = <span class="built_in">inverseMultiplication</span>(a, m);</span><br><span class="line"> </span><br><span class="line">	<span class="keyword">if</span> (isval == <span class="number">-1</span>) &#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;该题无解&quot;</span>&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;该题的乘法逆元是&quot;</span> &lt;&lt; isval&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-实现模指数运算的函数，给定x、y和m，求x的y次方模m。"><a href="#2-实现模指数运算的函数，给定x、y和m，求x的y次方模m。" class="headerlink" title="2.实现模指数运算的函数，给定x、y和m，求x的y次方模m。"></a>2.实现模指数运算的函数，给定x、y和m，求x的y次方模m。</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">rec_mod_exp</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y,<span class="keyword">int</span> p)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>( y == <span class="number">0</span> )&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> z = <span class="built_in">rec_mod_exp</span>(x,y/<span class="number">2</span>,p);</span><br><span class="line">	<span class="keyword">if</span>( (y&amp;<span class="number">1</span>) == <span class="number">0</span> )&#123;			<span class="comment">//如果是偶数</span></span><br><span class="line">		<span class="keyword">return</span> z*z % p;</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> x*z*z % p;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-设p-23和a-5，使用费尔马小定理计算a-2020-mod-p"><a href="#3-设p-23和a-5，使用费尔马小定理计算a-2020-mod-p" class="headerlink" title="3.设p = 23和a = 5，使用费尔马小定理计算a^{2020} mod p"></a>3.设p = 23和a = 5，使用费尔马小定理计算a^{2020} mod p</h2><p>因为$5^{2020} = 5^{22<em>91+18}(mod23)$，<br>再由费马小定理得，原式=$5^{18}(mod23)$；<br>又因为$5^{2}(mod23)=2$，<br>再由同余关系可知，原式=$2^{9}(mod23)$，<br>又因为$2^{5}=32(mod23)=9$,$2^{4}=16$,<br>所以原式=9</em>16=144。</p>
+<h2 id="4-使用欧拉定理计算2-100000-mod-55。"><a href="#4-使用欧拉定理计算2-100000-mod-55。" class="headerlink" title="4.使用欧拉定理计算2^{100000} mod 55。"></a>4.使用欧拉定理计算2^{100000} mod 55。</h2><p>由定义4.1知，φ(55)=|{1,2,……,54}|=40<br>由欧拉定理得，$2^{100000} \equiv 2^{40*2500}(mod55)=1^{2500}(mod25)=1$。</p>
+<h2 id="5-手动计算7-1000-的最后两个数位等于什么。"><a href="#5-手动计算7-1000-的最后两个数位等于什么。" class="headerlink" title="5.手动计算7^{1000}的最后两个数位等于什么。"></a>5.手动计算7^{1000}的最后两个数位等于什么。</h2><p>为得最后两个数位，等价于$7^{1000}(mod100)$<br>由定义4.1知，φ(100)=|{1,2,……,99}|=100-(50+20-10)=40<br>由欧拉定理得，$7^{1000} \equiv 7^{40*25}(mod25)= 1$,<br>所以最后两个数位是01。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/mypage/2021/09/29/%E4%BD%9C%E4%B8%9A2/" rel="next" title="作业2">
+                <i class="fa fa-chevron-left"></i> 作业2
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/mypage/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%9C%E4%B8%9A3"><span class="nav-number">1.</span> <span class="nav-text">作业3</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%AE%9E%E7%8E%B0%E6%B1%82%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83%E7%9A%84%E5%87%BD%E6%95%B0%EF%BC%8C%E7%BB%99%E5%AE%9Aa%E5%92%8Cm%EF%BC%8C%E6%B1%82a%E6%A8%A1m%E7%9A%84%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83%EF%BC%8C%E6%97%A0%E8%A7%A3%E6%97%B6%E8%AF%B7%E7%BB%99%E5%87%BA%E6%97%A0%E8%A7%A3%E6%8F%90%E7%A4%BA%EF%BC%8C%E5%B9%B6%E4%B8%94%E5%8F%AA%E8%BF%94%E5%9B%9E%E6%AD%A3%E6%95%B4%E6%95%B0%E3%80%82%E8%BF%9B%E8%80%8C%E7%BB%99%E5%87%BA%E6%B1%82%E8%A7%A3%E5%90%8C%E4%BD%99%E6%96%B9%E7%A8%8B%EF%BC%88ax-b-mod-m%EF%BC%89%E7%9A%84%E5%87%BD%E6%95%B0%EF%BC%8C%E5%8D%B3%E7%BB%99%E5%AE%9Aa%EF%BC%8Cb%EF%BC%8Cm%EF%BC%8C%E8%BE%93%E5%87%BA%E6%BB%A1%E8%B6%B3%E6%96%B9%E7%A8%8B%E7%9A%84x%EF%BC%8C%E6%97%A0%E8%A7%A3%E7%BB%99%E5%87%BA%E6%97%A0%E8%A7%A3%E6%8F%90%E7%A4%BA%E3%80%82"><span class="nav-number">1.1.</span> <span class="nav-text">1.实现求乘法逆元的函数，给定a和m，求a模m的乘法逆元，无解时请给出无解提示，并且只返回正整数。进而给出求解同余方程（ax &#x3D; b mod m）的函数，即给定a，b，m，输出满足方程的x，无解给出无解提示。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%AE%9E%E7%8E%B0%E6%A8%A1%E6%8C%87%E6%95%B0%E8%BF%90%E7%AE%97%E7%9A%84%E5%87%BD%E6%95%B0%EF%BC%8C%E7%BB%99%E5%AE%9Ax%E3%80%81y%E5%92%8Cm%EF%BC%8C%E6%B1%82x%E7%9A%84y%E6%AC%A1%E6%96%B9%E6%A8%A1m%E3%80%82"><span class="nav-number">1.2.</span> <span class="nav-text">2.实现模指数运算的函数，给定x、y和m，求x的y次方模m。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E8%AE%BEp-23%E5%92%8Ca-5%EF%BC%8C%E4%BD%BF%E7%94%A8%E8%B4%B9%E5%B0%94%E9%A9%AC%E5%B0%8F%E5%AE%9A%E7%90%86%E8%AE%A1%E7%AE%97a-2020-mod-p"><span class="nav-number">1.3.</span> <span class="nav-text">3.设p &#x3D; 23和a &#x3D; 5，使用费尔马小定理计算a^{2020} mod p</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E4%BD%BF%E7%94%A8%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86%E8%AE%A1%E7%AE%972-100000-mod-55%E3%80%82"><span class="nav-number">1.4.</span> <span class="nav-text">4.使用欧拉定理计算2^{100000} mod 55。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E6%89%8B%E5%8A%A8%E8%AE%A1%E7%AE%977-1000-%E7%9A%84%E6%9C%80%E5%90%8E%E4%B8%A4%E4%B8%AA%E6%95%B0%E4%BD%8D%E7%AD%89%E4%BA%8E%E4%BB%80%E4%B9%88%E3%80%82"><span class="nav-number">1.5.</span> <span class="nav-text">5.手动计算7^{1000}的最后两个数位等于什么。</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">orall</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/mypage/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/mypage/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/mypage/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/mypage/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/mypage/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/mypage/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/mypage/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/mypage/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/mypage/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/mypage/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/mypage/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>
