@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="CINTA作业六：拉格朗日定理1.设G是群，H是G的子群。任取$g_1,g_2∈G$,则$g_1H&#x3D;g_2H$当且仅当$g_1^{-1}g_2∈H$.充分性：因为$g_1H&#x3D;g_2H$，即存在$h_1,h_2∈H$，使$g_1h_1&#x3D;g_2h_2$,由消去律得，$h_1h_2^{-1}&#x3D;g_1^{-1}g_2$,又因为$h_1h_2^{-1}∈H$,所以$g_1^{-1}g_2∈H$。 2.如果G">
+<meta name="description" content="CINTA作业八：CRT1.手动计算$2000^{2019}(mod 221)$,不允许使用电脑或者其他电子设备$221&#x3D;1317$,13与17互素，符合中国剩余定理的代数版$2000 ↔ (11,11)$，则$(11,11)^{2019}&#x3D;([11^{2019}mod13],[11^{2019}mod17])$,再由费马小定理得，$11^{2019}mod13&#x3D;11^{12168+3}mod13">
 <meta property="og:type" content="article">
-<meta property="og:title" content="homework6">
-<meta property="og:url" content="https://oraeorae.github.io/mypage/2021/11/02/homework6/index.html">
+<meta property="og:title" content="homework8">
+<meta property="og:url" content="https://oraeorae.github.io/mypage/2021/12/07/homework8/index.html">
 <meta property="og:site_name" content="面向计算机数学作业1">
-<meta property="og:description" content="CINTA作业六：拉格朗日定理1.设G是群，H是G的子群。任取$g_1,g_2∈G$,则$g_1H&#x3D;g_2H$当且仅当$g_1^{-1}g_2∈H$.充分性：因为$g_1H&#x3D;g_2H$，即存在$h_1,h_2∈H$，使$g_1h_1&#x3D;g_2h_2$,由消去律得，$h_1h_2^{-1}&#x3D;g_1^{-1}g_2$,又因为$h_1h_2^{-1}∈H$,所以$g_1^{-1}g_2∈H$。 2.如果G">
+<meta property="og:description" content="CINTA作业八：CRT1.手动计算$2000^{2019}(mod 221)$,不允许使用电脑或者其他电子设备$221&#x3D;1317$,13与17互素，符合中国剩余定理的代数版$2000 ↔ (11,11)$，则$(11,11)^{2019}&#x3D;([11^{2019}mod13],[11^{2019}mod17])$,再由费马小定理得，$11^{2019}mod13&#x3D;11^{12168+3}mod13">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-11-02T14:53:24.000Z">
-<meta property="article:modified_time" content="2021-11-02T15:54:27.163Z">
+<meta property="article:published_time" content="2021-12-07T13:36:24.000Z">
+<meta property="article:modified_time" content="2021-12-07T13:37:23.711Z">
 <meta property="article:author" content="orall">
 <meta name="twitter:card" content="summary">
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="https://oraeorae.github.io/mypage/2021/11/02/homework6/"/>
+  <link rel="canonical" href="https://oraeorae.github.io/mypage/2021/12/07/homework8/"/>
 
 
 
 
 
-  <title>homework6 | 面向计算机数学作业1</title>
+  <title>homework8 | 面向计算机数学作业1</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://oraeorae.github.io/mypage/mypage/2021/11/02/homework6/">
+    <link itemprop="mainEntityOfPage" href="https://oraeorae.github.io/mypage/mypage/2021/12/07/homework8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">homework6</h1>
+          <h1 class="post-title" itemprop="name headline">homework8</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-11-02T22:53:24+08:00">
-                2021-11-02
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-12-07T21:36:24+08:00">
+                2021-12-07
               </time>
             
 
@@ -299,10 +299,14 @@
       
 
       
-        <h1 id="CINTA作业六：拉格朗日定理"><a href="#CINTA作业六：拉格朗日定理" class="headerlink" title="CINTA作业六：拉格朗日定理"></a>CINTA作业六：拉格朗日定理</h1><h2 id="1-设G是群，H是G的子群。任取-g-1-g-2∈G-则-g-1H-g-2H-当且仅当-g-1-1-g-2∈H"><a href="#1-设G是群，H是G的子群。任取-g-1-g-2∈G-则-g-1H-g-2H-当且仅当-g-1-1-g-2∈H" class="headerlink" title="1.设G是群，H是G的子群。任取$g_1,g_2∈G$,则$g_1H=g_2H$当且仅当$g_1^{-1}g_2∈H$."></a>1.设G是群，H是G的子群。任取$g_1,g_2∈G$,则$g_1H=g_2H$当且仅当$g_1^{-1}g_2∈H$.</h2><p>充分性：<br>因为$g_1H=g_2H$，<br>即存在$h_1,h_2∈H$，使$g_1h_1=g_2h_2$,<br>由消去律得，$h_1h_2^{-1}=g_1^{-1}g_2$,<br>又因为$h_1h_2^{-1}∈H$,<br>所以$g_1^{-1}g_2∈H$。</p>
-<h2 id="2-如果G是群，H是群G的子群，且-G-H-2-请证明对任意的g∈G，gH-Hg。"><a href="#2-如果G是群，H是群G的子群，且-G-H-2-请证明对任意的g∈G，gH-Hg。" class="headerlink" title="2.如果G是群，H是群G的子群，且[G:H]=2,请证明对任意的g∈G，gH=Hg。"></a>2.如果G是群，H是群G的子群，且[G:H]=2,请证明对任意的g∈G，gH=Hg。</h2><p>由题知H在G有两个左陪集，<br>(1)设g∈H,<br>    $gH=H,Hg=H$,<br>    所以$gH=Hg$。<br>(2)g∉H时，<br>    $gH∉H,Hg∉H$，<br>    $gH∈G，Hg∈G$，<br>    所以$gH=Hg=G-H$.<br>综上，对任意的g∈G，gH=Hg</p>
-<h2 id="3-如果群H是群G的真子群，即存在g∈G但是g∉H，请证明-H-≤-G-2。"><a href="#3-如果群H是群G的真子群，即存在g∈G但是g∉H，请证明-H-≤-G-2。" class="headerlink" title="3.如果群H是群G的真子群，即存在g∈G但是g∉H，请证明|H|≤|G|/2。"></a>3.如果群H是群G的真子群，即存在g∈G但是g∉H，请证明|H|≤|G|/2。</h2><p>因为H是G的真子集，<br>所以H在G上不同陪集的个数大于或者等于2，<br>即$|G|/|H| = |G:H| ≥ 2$，<br>所以$|H|≤|G|/2$</p>
-<h2 id="4-设G是阶为pq的群，其中p和q是素数。请证明G的任意真子群是循环群。"><a href="#4-设G是阶为pq的群，其中p和q是素数。请证明G的任意真子群是循环群。" class="headerlink" title="4.设G是阶为pq的群，其中p和q是素数。请证明G的任意真子群是循环群。"></a>4.设G是阶为pq的群，其中p和q是素数。请证明G的任意真子群是循环群。</h2><p>因为pq整除p，<br>所以存在p阶群$H_1$，$H_1∈G$<br>由拉格朗日定理得，素数阶群必为循环群。<br>因此$H_1$为循环群，同理存在q阶群$H_2$，$H_2∈G$<br>则G的任意真子群是循环群。</p>
+        <h4 id="CINTA作业八：CRT"><a href="#CINTA作业八：CRT" class="headerlink" title="CINTA作业八：CRT"></a>CINTA作业八：CRT</h4><p>1.手动计算$2000^{2019}(mod 221)$,不允许使用电脑或者其他电子设备<br>$221=13<em>17$,13与17互素，符合中国剩余定理的代数版<br>$2000 ↔ (11,11)$，则<br>$(11,11)^{2019}=([11^{2019}mod13],[11^{2019}mod17])$,<br>再由费马小定理得，$11^{2019}mod13=11^{12</em>168+3}mod13=5$<br>则$原式=(5,5)=5$,</p>
+<p>2.运用CRT求解：</p>
+<script type="math/tex; mode=display">x ≡ 8(mod 11)</script><script type="math/tex; mode=display">x ≡ 3(mod 19)</script><p>(1)记$a=8,b=3,p=11,q=19$和$n=pq=209$<br>(2)使用egcd算法求解$p^{-1}$和$q^{-1}$,它们会使得$pp^{-1}≡1(mod 19)$和$qq^{-1}≡1(mod11)$,<br>,即 $p^{-1}=7 ,q^{-1}=-4+11=7$<br>令$y=aqq^{-1}+bpp^{-1} mod 209$=(8<em>19</em>7+3<em>11</em>7)mod209=138</p>
+<p>3.运用CRT求解：</p>
+<script type="math/tex; mode=display">x ≡ 1(mod 5)</script><script type="math/tex; mode=display">x ≡ 2(mod 7)</script><script type="math/tex; mode=display">x ≡ 3(mod 9)</script><script type="math/tex; mode=display">x ≡ 4(mod 11)</script><p>观察得5,7,9,11两两互素，所以可使用中国剩余定理推广版；<br>存在模M的唯一解，其中$M=5<em>7</em>9<em>11=3465$,<br>$b_1=M/5=693$<br>$b_2=M/7=495$<br>$b_3=M/9=385$<br>$b_4=M/11=315$,<br>再由egcd算法，分别求得$b_1^{-1}=2,b_2^{-1}=3,b_3^{-1}=4,b_4^{-1}=-3+11=8$<br>$x = (1</em>693<em>2+2</em>495<em>3+3</em>385<em>4+4</em>315*8) mod 3465$<br>即 $x = 1731$</p>
+<p>4.设m和n为互素的正整数，a&gt;0为一个正整数，如果</p>
+<script type="math/tex; mode=display">x ≡ a(mod m)</script><script type="math/tex; mode=display">x ≡ a(mod n)</script><p>x模mn等于什么？为什么?提示：这是一道看上去与中国剩余定理相关的问题<br>由题知，$x = k_1m + a$, $x = k_2n + a$<br>因此$k_1m=k_2n$,<br>又因为m,n互素，所以$k_1=s_1m,k_2=s_2n$,<br>即原式为 $x = s_1mn + a$,$x = s_2mn + a$,<br>所以 <script type="math/tex">x ≡ a(mod mn)</script>，即x模mn为a。</p>
+<p>5.设p和q是不同的两个素数，请证明$p^{q-1}+q^{p-1} ≡ 1(mod pq)$<br>由题知，p和q是不同的两个素数，则gcd(p,q)=1,<br>由费马小定理得<br>$p^{q-1}≡1(modq)$,同理得$q^{p-1}≡1(modp)$<br>又有<br>$p^{q-1}≡0(modp)$,$q^{p-1}≡0(modq)$,<br>相加得到，$p^{q-1}+q^{p-1}≡1(modq)$，$q^{p-1}+q^{p-1}≡1(modp)$，<br>设$p^{q-1}+q^{p-1}=a$,<br>则$a≡1(modq),a≡1(modp)$,即$a=k_1q+1,a=k_2p+1$,<br>证明步骤与题4一致，最终可得$a≡1(modpq)$,<br>即$p^{q-1}+q^{p-1}≡1(modpq)$</p>
 
       
     </div>
@@ -327,8 +331,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/mypage/2021/10/26/homework4/" rel="next" title="homework4">
-                <i class="fa fa-chevron-left"></i> homework4
+              <a href="/mypage/2021/11/16/homework7/" rel="next" title="homework7">
+                <i class="fa fa-chevron-left"></i> homework7
               </a>
             
           </div>
@@ -336,10 +340,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/mypage/2021/11/04/homework5/" rel="prev" title="homework5">
-                homework5 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -453,7 +453,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CINTA%E4%BD%9C%E4%B8%9A%E5%85%AD%EF%BC%9A%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E5%AE%9A%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text">CINTA作业六：拉格朗日定理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E8%AE%BEG%E6%98%AF%E7%BE%A4%EF%BC%8CH%E6%98%AFG%E7%9A%84%E5%AD%90%E7%BE%A4%E3%80%82%E4%BB%BB%E5%8F%96-g-1-g-2%E2%88%88G-%E5%88%99-g-1H-g-2H-%E5%BD%93%E4%B8%94%E4%BB%85%E5%BD%93-g-1-1-g-2%E2%88%88H"><span class="nav-number">1.1.</span> <span class="nav-text">1.设G是群，H是G的子群。任取$g_1,g_2∈G$,则$g_1H&#x3D;g_2H$当且仅当$g_1^{-1}g_2∈H$.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%A6%82%E6%9E%9CG%E6%98%AF%E7%BE%A4%EF%BC%8CH%E6%98%AF%E7%BE%A4G%E7%9A%84%E5%AD%90%E7%BE%A4%EF%BC%8C%E4%B8%94-G-H-2-%E8%AF%B7%E8%AF%81%E6%98%8E%E5%AF%B9%E4%BB%BB%E6%84%8F%E7%9A%84g%E2%88%88G%EF%BC%8CgH-Hg%E3%80%82"><span class="nav-number">1.2.</span> <span class="nav-text">2.如果G是群，H是群G的子群，且[G:H]&#x3D;2,请证明对任意的g∈G，gH&#x3D;Hg。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%A6%82%E6%9E%9C%E7%BE%A4H%E6%98%AF%E7%BE%A4G%E7%9A%84%E7%9C%9F%E5%AD%90%E7%BE%A4%EF%BC%8C%E5%8D%B3%E5%AD%98%E5%9C%A8g%E2%88%88G%E4%BD%86%E6%98%AFg%E2%88%89H%EF%BC%8C%E8%AF%B7%E8%AF%81%E6%98%8E-H-%E2%89%A4-G-2%E3%80%82"><span class="nav-number">1.3.</span> <span class="nav-text">3.如果群H是群G的真子群，即存在g∈G但是g∉H，请证明|H|≤|G|&#x2F;2。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E8%AE%BEG%E6%98%AF%E9%98%B6%E4%B8%BApq%E7%9A%84%E7%BE%A4%EF%BC%8C%E5%85%B6%E4%B8%ADp%E5%92%8Cq%E6%98%AF%E7%B4%A0%E6%95%B0%E3%80%82%E8%AF%B7%E8%AF%81%E6%98%8EG%E7%9A%84%E4%BB%BB%E6%84%8F%E7%9C%9F%E5%AD%90%E7%BE%A4%E6%98%AF%E5%BE%AA%E7%8E%AF%E7%BE%A4%E3%80%82"><span class="nav-number">1.4.</span> <span class="nav-text">4.设G是阶为pq的群，其中p和q是素数。请证明G的任意真子群是循环群。</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#CINTA%E4%BD%9C%E4%B8%9A%E5%85%AB%EF%BC%9ACRT"><span class="nav-number">1.</span> <span class="nav-text">CINTA作业八：CRT</span></a></li></ol></div>
             
 
           </div>
